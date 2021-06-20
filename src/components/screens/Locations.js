@@ -1,33 +1,33 @@
 import React from "react";
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import { getSaleData } from "../../redux/actions/Sales";
+import { getLocationData } from "../../redux/actions/Locations";
 
-const Home = (props) => {
+const Locations = (props) => {
     const {
         store,
-        saleData,
+        locationData,
     } = props
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(getSaleData())
+        dispatch(getLocationData())
     }, [dispatch])
     
     return(
        <>
-          {saleData ? (
+          {locationData ? (
         <div
-          list={saleData}
+          list={locationData}
           className='todo-task-list media-list'
         >
-          {saleData.map((sale) => {
+          {locationData.map((location) => {
             return (
               <li
-                key={sale.Id}
+                key={location._id}
               >
                 <div className='todo-title-wrapper'>
                   <div className='todo-title-area'>
-                    <span className='todo-title'>{[sale.PurchasedItems]}</span>
+                    <span className='todo-title'>{[location.city]}</span>
                   </div>
                 </div>
               </li>
@@ -42,4 +42,4 @@ const Home = (props) => {
       </>
     );
 };
-export default Home;
+export default Locations;

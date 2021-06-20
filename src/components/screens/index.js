@@ -4,7 +4,7 @@ import { getSaleData } from '../../redux/actions/Sales/index'
 
 const SALES = () => {
   const dispatch = useDispatch(),
-  const store = useSelector(state => state.sales)
+  const store = useSelector(state => state.SaleReuducer)
 
   useEffect(() => {
     dispatch(

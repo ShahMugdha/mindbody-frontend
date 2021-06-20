@@ -19,13 +19,14 @@ import {
 const Login = () => {
   const dispatch = useDispatch();
   const router = useHistory();
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
-  const handleLogin = async () => {
+  const [apiKey, setApiKey] = useState('');
+  const [siteId, setSiteId] = useState('');
+  const [appName, setAppName] = useState('')
+  const handleLogin = async (e) => {
     //e.preventDefault()
     dispatch(getUserToken())
-    /* console.log(userName);
-    try {
+    console.log(apiKey);
+    /*try {
       const login = await loginUser(userName, password);
       if (login.data) {
         router.push('/sales');
@@ -53,46 +54,45 @@ const Login = () => {
             >
               WELCOME TO RYZEN! 👋
             </CardTitle>
-            <CardText
-              className='mb-2'
-              style={{
-                fontFamily: 'Encode Sans, sans-serif',
-                fontWeight: '400',
-                fontSize: '16px',
-              }}
-            >
-              Login now to schedule your priorities and improve your
-              productivity at your workplace.
-            </CardText>
             <Form className='auth-login-form mt-2'>
               <FormGroup>
                 <Label className='form-label' for='login-userName'>
-                  Username
+                  API KEY
                 </Label>
                 <Input
                   autoFocus
-                  type='text'
+                  type='name'
                   id='login-userName'
                   name='login-userName'
-                  placeholder='Username'
-                  value = {userName}
-                  onChange={(e) => setUserName(e.target.value)}
+                  value = {apiKey}
+                  onChange={(e) => setApiKey(e.target.value)}
                 />
               </FormGroup>
               <FormGroup>
                 <Label className='form-label' for='login-email'>
-                  Password
+                  SITE ID
                 </Label>
                 <Input
-                  autoFocus
-                  type='password'
+                  type='name'
                   id='login-email'
                   name='login-email'
-                  value = {password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value = {siteId}
+                  onChange={(e) => setSiteId(e.target.value)}
                 />
               </FormGroup>
-              <Button tag = {Link} to='/sales' color='primary' block onClick={handleLogin} type='submit'>
+              <FormGroup>
+                <Label className='form-label' for='login-email'>
+                  APP NAME
+                </Label>
+                <Input
+                  type='name'
+                  id='login-email'
+                  name='login-email'
+                  value = {appName}
+                  onChange={(e) => setAppName(e.target.value)}
+                />
+              </FormGroup>
+              <Button tag = {Link} to = '/sales' color='primary' block onClick={e => handleLogin(e)}>
                 Sign In
               </Button>
             </Form>
