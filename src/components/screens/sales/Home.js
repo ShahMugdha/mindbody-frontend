@@ -1,21 +1,18 @@
 import React from "react";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getSaleData } from "../../../redux/actions/Sales";
 
-const Home = (props) => {
-    const {
-        store,
-        saleData,
-    } = props
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(getSaleData())
-    }, [dispatch])
-    
-    return(
-       <>
-          {saleData ? (
+const Home = () => {
+  const saleData = useSelector(state => state.SaleReducer.saleData)
+  const dispatch = useDispatch()
+  useEffect(() => {
+      dispatch(getSaleData())
+  }, [dispatch])
+  
+  return(
+    <>
+      {saleData ? (
         <div
           list={saleData}
           className='todo-task-list media-list'
@@ -27,7 +24,7 @@ const Home = (props) => {
               >
                 <div className='todo-title-wrapper'>
                   <div className='todo-title-area'>
-                    <span className='todo-title'>{[sale.PurchasedItems]}</span>
+                    <span className='todo-title'>{[sale.SalesRepId]}</span>
                   </div>
                 </div>
               </li>
@@ -39,7 +36,7 @@ const Home = (props) => {
           <h5>No Items Found</h5>
         </div>
       )}
-      </>
-    );
+  </>
+  );
 };
 export default Home;

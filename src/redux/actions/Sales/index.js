@@ -8,7 +8,7 @@ export const getSaleData = () => {
       console.log(response.data, "sales data")
       dispatch({
         type: "GET_ALL__SALE_DATA",
-        payload: response.data.result,
+        payload: response.data
       });
     });
   };
