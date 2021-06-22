@@ -1,14 +1,14 @@
 const initialState = {
   userData: {},
-  locationData: [],
+  staffData: [],
   selectedUser: null
 }
 
-const LocationReducer = (state = initialState, action) => {
+const StaffReducer = (state = initialState, action) => {
   console.log(action, "action");
   switch (action.type) {
-    case 'GET_ALL__LOCATION_DATA':
-      return { ...state, locationData: action.payload.result }
+    case 'GET_ALL__STAFF_DATA':
+      return { ...state, staffData: action.payload.result}
     case 'GET_USER_TOKEN':
       return {...state, userData: action.payload.result}
     case 'GET_USER':
@@ -17,4 +17,4 @@ const LocationReducer = (state = initialState, action) => {
       return state
   }
 }
-export default LocationReducer
+export default StaffReducer

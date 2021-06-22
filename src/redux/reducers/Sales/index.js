@@ -14,7 +14,6 @@ const initialState = {
       case 'GET_USER':
         return { ...state, selectedUser: state.selectedUser }
       default:
-        console.log("default sale")
         return state
     }
   }
