@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import { getLocationData } from "../../redux/actions/Locations";
+import { getLocationData } from "../../../redux/actions/Locations";
 
 const Locations = (props) => {
     const {
@@ -27,7 +27,7 @@ const Locations = (props) => {
               >
                 <div className='todo-title-wrapper'>
                   <div className='todo-title-area'>
-                    <span className='todo-title'>{[location.city]}</span>
+                    <span className='todo-title'>{[location.City]}</span>
                   </div>
                 </div>
               </li>

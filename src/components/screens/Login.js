@@ -92,7 +92,7 @@ const Login = () => {
                   onChange={(e) => setAppName(e.target.value)}
                 />
               </FormGroup>
-              <Button tag = {Link} to = '/sales' color='primary' block onClick={e => handleLogin(e)}>
+              <Button tag = {Link} to = '/locations' color='primary' block onClick={e => handleLogin(e)}>
                 Sign In
               </Button>
             </Form>

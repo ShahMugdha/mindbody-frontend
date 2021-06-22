@@ -3,7 +3,7 @@ import request from "../../../services/request";
 
 export const getLocationData = () => {
   return async (dispatch) => {
-    await request.post('')
+    await request.get('/locations/all-locations')
     .then((response) => {
       console.log(response.data, "locations data")
       dispatch({

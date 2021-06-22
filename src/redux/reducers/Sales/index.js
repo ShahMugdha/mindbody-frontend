@@ -8,7 +8,7 @@ const initialState = {
     console.log(action, "action");
     switch (action.type) {
       case 'GET_ALL__SALE_DATA':
-        return { ...state, saleData: action.payload}
+        return { ...state, saleData: action.payload.result[0]}
       case 'GET_USER_TOKEN':
         return {...state, userData: action.payload.result}
       case 'GET_USER':

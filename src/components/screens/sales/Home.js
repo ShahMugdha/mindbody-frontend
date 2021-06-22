@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
-import { getSaleData } from "../../redux/actions/Sales";
+import { getSaleData } from "../../../redux/actions/Sales";
 
 const Home = (props) => {
     const {

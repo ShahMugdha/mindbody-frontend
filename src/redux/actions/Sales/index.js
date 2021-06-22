@@ -3,12 +3,12 @@ import request from "../../../services/request";
 
 export const getSaleData = () => {
   return async (dispatch) => {
-    await axios.post('http://localhost:5000/sales')
+    await request.get('/sales/all-sales')
     .then((response) => {
       console.log(response.data, "sales data")
       dispatch({
         type: "GET_ALL__SALE_DATA",
-        payload: response.data,
+        payload: response.data.result,
       });
     });
   };
